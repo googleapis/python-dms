@@ -58,6 +58,12 @@ s.replace(
 )
 
 s.replace(
+  "README.rst",
+  "google-cloud-python/blob/main/README.rst",
+  "google-cloud-python/blob/master/README.rst"
+)
+
+s.replace(
   "CONTRIBUTING.rst",
   "kubernetes/community/blob/main",
   "kubernetes/community/blob/master"
