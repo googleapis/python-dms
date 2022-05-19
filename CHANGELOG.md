@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.3](https://github.com/googleapis/python-dms/compare/v0.2.2...v0.2.3) (2022-04-01)
+
+
+### Bug Fixes
+
+* **deps:** require google-api-core >= 1.31.5, >= 2.3.2 on v0 release ([#93](https://github.com/googleapis/python-dms/issues/93)) ([76e57e8](https://github.com/googleapis/python-dms/commit/76e57e81db0aba6a505949ff0417f303df212df0))
+
 ### [0.2.2](https://www.github.com/googleapis/python-dms/compare/v0.2.1...v0.2.2) (2021-07-29)
 
 
