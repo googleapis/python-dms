@@ -4978,7 +4978,6 @@ def test_data_migration_service_transport_auth_adc(transport_class):
     [
         transports.DataMigrationServiceGrpcTransport,
         transports.DataMigrationServiceGrpcAsyncIOTransport,
-        transports.DataMigrationServiceRestTransport,
     ],
 )
 def test_data_migration_service_transport_auth_gdch_credentials(transport_class):
