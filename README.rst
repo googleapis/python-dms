@@ -3,7 +3,7 @@ Python Client for Cloud Database Migration Service API
 
 |stable| |pypi| |versions|
 
-`Cloud Database Migration Service API`_: 
+`Cloud Database Migration Service API`_: makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.
 
 - `Client Library Documentation`_
 - `Product Documentation`_
