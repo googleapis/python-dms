@@ -7,7 +7,7 @@
         "google/cloud/clouddms/gapic_version.py",
         {
           "type": "json",
-          "path": "samples/generated_samples/snippet_metadata_clouddms_v1.json",
+          "path": "samples/generated_samples/snippet_metadata_google.cloud.clouddms.v1.json",
           "jsonpath": "$.clientLibrary.version"
         }
       ]
