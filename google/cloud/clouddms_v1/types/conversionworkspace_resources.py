@@ -17,37 +17,36 @@ from __future__ import annotations
 
 from typing import MutableMapping, MutableSequence
 
+from google.protobuf import struct_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
 import proto  # type: ignore
 
 from google.cloud.clouddms_v1.types import clouddms_resources
-from google.protobuf import struct_pb2  # type: ignore
-from google.protobuf import timestamp_pb2  # type: ignore
-
 
 __protobuf__ = proto.module(
-    package='google.cloud.clouddms.v1',
+    package="google.cloud.clouddms.v1",
     manifest={
-        'DatabaseEntityType',
-        'BackgroundJobType',
-        'ImportRulesFileFormat',
-        'DatabaseEngineInfo',
-        'ConversionWorkspace',
-        'BackgroundJobLogEntry',
-        'DatabaseEntity',
-        'SchemaEntity',
-        'TableEntity',
-        'ColumnEntity',
-        'ConstraintEntity',
-        'IndexEntity',
-        'TriggerEntity',
-        'ViewEntity',
-        'SequenceEntity',
-        'StoredProcedureEntity',
-        'FunctionEntity',
-        'SynonymEntity',
-        'PackageEntity',
-        'EntityMapping',
-        'EntityMappingLogEntry',
+        "DatabaseEntityType",
+        "BackgroundJobType",
+        "ImportRulesFileFormat",
+        "DatabaseEngineInfo",
+        "ConversionWorkspace",
+        "BackgroundJobLogEntry",
+        "DatabaseEntity",
+        "SchemaEntity",
+        "TableEntity",
+        "ColumnEntity",
+        "ConstraintEntity",
+        "IndexEntity",
+        "TriggerEntity",
+        "ViewEntity",
+        "SequenceEntity",
+        "StoredProcedureEntity",
+        "FunctionEntity",
+        "SynonymEntity",
+        "PackageEntity",
+        "EntityMapping",
+        "EntityMappingLogEntry",
     },
 )
 
@@ -212,15 +211,15 @@ class ConversionWorkspace(proto.Message):
         proto.STRING,
         number=1,
     )
-    source: 'DatabaseEngineInfo' = proto.Field(
+    source: "DatabaseEngineInfo" = proto.Field(
         proto.MESSAGE,
         number=2,
-        message='DatabaseEngineInfo',
+        message="DatabaseEngineInfo",
     )
-    destination: 'DatabaseEngineInfo' = proto.Field(
+    destination: "DatabaseEngineInfo" = proto.Field(
         proto.MESSAGE,
         number=3,
-        message='DatabaseEngineInfo',
+        message="DatabaseEngineInfo",
     )
     global_settings: MutableMapping[str, str] = proto.MapField(
         proto.STRING,
@@ -306,6 +305,7 @@ class BackgroundJobLogEntry(proto.Message):
 
             This field is a member of `oneof`_ ``job_details``.
     """
+
     class JobCompletionState(proto.Enum):
         r"""Final state after a job completes.
 
@@ -350,10 +350,10 @@ class BackgroundJobLogEntry(proto.Message):
             proto.STRING,
             number=1,
         )
-        file_format: 'ImportRulesFileFormat' = proto.Field(
+        file_format: "ImportRulesFileFormat" = proto.Field(
             proto.ENUM,
             number=2,
-            enum='ImportRulesFileFormat',
+            enum="ImportRulesFileFormat",
         )
 
     class ConvertJobDetails(proto.Message):
@@ -395,10 +395,10 @@ class BackgroundJobLogEntry(proto.Message):
         proto.STRING,
         number=1,
     )
-    job_type: 'BackgroundJobType' = proto.Field(
+    job_type: "BackgroundJobType" = proto.Field(
         proto.ENUM,
         number=2,
-        enum='BackgroundJobType',
+        enum="BackgroundJobType",
     )
     start_time: timestamp_pb2.Timestamp = proto.Field(
         proto.MESSAGE,
@@ -426,25 +426,25 @@ class BackgroundJobLogEntry(proto.Message):
     seed_job_details: SeedJobDetails = proto.Field(
         proto.MESSAGE,
         number=100,
-        oneof='job_details',
+        oneof="job_details",
         message=SeedJobDetails,
     )
     import_rules_job_details: ImportRulesJobDetails = proto.Field(
         proto.MESSAGE,
         number=101,
-        oneof='job_details',
+        oneof="job_details",
         message=ImportRulesJobDetails,
     )
     convert_job_details: ConvertJobDetails = proto.Field(
         proto.MESSAGE,
         number=102,
-        oneof='job_details',
+        oneof="job_details",
         message=ConvertJobDetails,
     )
     apply_job_details: ApplyJobDetails = proto.Field(
         proto.MESSAGE,
         number=103,
-        oneof='job_details',
+        oneof="job_details",
         message=ApplyJobDetails,
     )
 
@@ -516,6 +516,7 @@ class DatabaseEntity(proto.Message):
 
             This field is a member of `oneof`_ ``entity_body``.
     """
+
     class TreeType(proto.Enum):
         r"""The type of database entities tree.
 
@@ -550,63 +551,63 @@ class DatabaseEntity(proto.Message):
         number=3,
         enum=TreeType,
     )
-    entity_type: 'DatabaseEntityType' = proto.Field(
+    entity_type: "DatabaseEntityType" = proto.Field(
         proto.ENUM,
         number=4,
-        enum='DatabaseEntityType',
+        enum="DatabaseEntityType",
     )
-    mappings: MutableSequence['EntityMapping'] = proto.RepeatedField(
+    mappings: MutableSequence["EntityMapping"] = proto.RepeatedField(
         proto.MESSAGE,
         number=5,
-        message='EntityMapping',
+        message="EntityMapping",
     )
-    schema: 'SchemaEntity' = proto.Field(
+    schema: "SchemaEntity" = proto.Field(
         proto.MESSAGE,
         number=102,
-        oneof='entity_body',
-        message='SchemaEntity',
+        oneof="entity_body",
+        message="SchemaEntity",
     )
-    table: 'TableEntity' = proto.Field(
+    table: "TableEntity" = proto.Field(
         proto.MESSAGE,
         number=103,
-        oneof='entity_body',
-        message='TableEntity',
+        oneof="entity_body",
+        message="TableEntity",
     )
-    view: 'ViewEntity' = proto.Field(
+    view: "ViewEntity" = proto.Field(
         proto.MESSAGE,
         number=104,
-        oneof='entity_body',
-        message='ViewEntity',
+        oneof="entity_body",
+        message="ViewEntity",
     )
-    sequence: 'SequenceEntity' = proto.Field(
+    sequence: "SequenceEntity" = proto.Field(
         proto.MESSAGE,
         number=105,
-        oneof='entity_body',
-        message='SequenceEntity',
+        oneof="entity_body",
+        message="SequenceEntity",
     )
-    stored_procedure: 'StoredProcedureEntity' = proto.Field(
+    stored_procedure: "StoredProcedureEntity" = proto.Field(
         proto.MESSAGE,
         number=106,
-        oneof='entity_body',
-        message='StoredProcedureEntity',
+        oneof="entity_body",
+        message="StoredProcedureEntity",
     )
-    database_function: 'FunctionEntity' = proto.Field(
+    database_function: "FunctionEntity" = proto.Field(
         proto.MESSAGE,
         number=107,
-        oneof='entity_body',
-        message='FunctionEntity',
+        oneof="entity_body",
+        message="FunctionEntity",
     )
-    synonym: 'SynonymEntity' = proto.Field(
+    synonym: "SynonymEntity" = proto.Field(
         proto.MESSAGE,
         number=108,
-        oneof='entity_body',
-        message='SynonymEntity',
+        oneof="entity_body",
+        message="SynonymEntity",
     )
-    database_package: 'PackageEntity' = proto.Field(
+    database_package: "PackageEntity" = proto.Field(
         proto.MESSAGE,
         number=109,
-        oneof='entity_body',
-        message='PackageEntity',
+        oneof="entity_body",
+        message="PackageEntity",
     )
 
 
@@ -648,25 +649,25 @@ class TableEntity(proto.Message):
             Comment associated with the table.
     """
 
-    columns: MutableSequence['ColumnEntity'] = proto.RepeatedField(
+    columns: MutableSequence["ColumnEntity"] = proto.RepeatedField(
         proto.MESSAGE,
         number=1,
-        message='ColumnEntity',
+        message="ColumnEntity",
     )
-    constraints: MutableSequence['ConstraintEntity'] = proto.RepeatedField(
+    constraints: MutableSequence["ConstraintEntity"] = proto.RepeatedField(
         proto.MESSAGE,
         number=2,
-        message='ConstraintEntity',
+        message="ConstraintEntity",
     )
-    indices: MutableSequence['IndexEntity'] = proto.RepeatedField(
+    indices: MutableSequence["IndexEntity"] = proto.RepeatedField(
         proto.MESSAGE,
         number=3,
-        message='IndexEntity',
+        message="IndexEntity",
     )
-    triggers: MutableSequence['TriggerEntity'] = proto.RepeatedField(
+    triggers: MutableSequence["TriggerEntity"] = proto.RepeatedField(
         proto.MESSAGE,
         number=4,
-        message='TriggerEntity',
+        message="TriggerEntity",
     )
     custom_features: struct_pb2.Struct = proto.Field(
         proto.MESSAGE,
@@ -973,10 +974,10 @@ class ViewEntity(proto.Message):
         number=2,
         message=struct_pb2.Struct,
     )
-    constraints: MutableSequence['ConstraintEntity'] = proto.RepeatedField(
+    constraints: MutableSequence["ConstraintEntity"] = proto.RepeatedField(
         proto.MESSAGE,
         number=3,
-        message='ConstraintEntity',
+        message="ConstraintEntity",
     )
 
 
@@ -1098,10 +1099,10 @@ class SynonymEntity(proto.Message):
         proto.STRING,
         number=1,
     )
-    source_type: 'DatabaseEntityType' = proto.Field(
+    source_type: "DatabaseEntityType" = proto.Field(
         proto.ENUM,
         number=2,
-        enum='DatabaseEntityType',
+        enum="DatabaseEntityType",
     )
     custom_features: struct_pb2.Struct = proto.Field(
         proto.MESSAGE,
@@ -1175,20 +1176,20 @@ class EntityMapping(proto.Message):
         proto.STRING,
         number=2,
     )
-    source_type: 'DatabaseEntityType' = proto.Field(
+    source_type: "DatabaseEntityType" = proto.Field(
         proto.ENUM,
         number=4,
-        enum='DatabaseEntityType',
+        enum="DatabaseEntityType",
     )
-    draft_type: 'DatabaseEntityType' = proto.Field(
+    draft_type: "DatabaseEntityType" = proto.Field(
         proto.ENUM,
         number=5,
-        enum='DatabaseEntityType',
+        enum="DatabaseEntityType",
     )
-    mapping_log: MutableSequence['EntityMappingLogEntry'] = proto.RepeatedField(
+    mapping_log: MutableSequence["EntityMappingLogEntry"] = proto.RepeatedField(
         proto.MESSAGE,
         number=3,
-        message='EntityMappingLogEntry',
+        message="EntityMappingLogEntry",
     )
 
 
